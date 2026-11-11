@@ -16,11 +16,12 @@ ACTION_REPOSITORY = "hashgraph-online/ai-plugin-scanner-action"
 API_ROOT = f"https://api.github.com/repos/{ACTION_REPOSITORY}"
 USER_AGENT = "awesome-ai-plugins-action-sync"
 REQUEST_TIMEOUT_SECONDS = 30
+# Workflow files under .github/workflows/ are deliberately excluded: the default
+# GITHUB_TOKEN cannot push changes to them, so the scheduled sync would always
+# fail. Dependabot (.github/dependabot.yml) keeps the workflow pins current.
 PINNED_FILES = (
     REPO_ROOT / "CONTRIBUTING.md",
     REPO_ROOT / "SCANNER_GUIDE.md",
-    REPO_ROOT / ".github/workflows/validate-contribution.yml",
-    REPO_ROOT / ".github/workflows/sweep-open-prs.yml",
     REPO_ROOT / "templates/hol-plugin-scanner.yml",
 )
 ACTION_PATTERN = re.compile(

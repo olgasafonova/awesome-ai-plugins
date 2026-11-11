@@ -1,0 +1,13 @@
+version: 2
+updates:
+  # Keeps the scanner action pin in workflow files current. The scheduled
+  # sync-scanner-action workflow cannot do this itself: GITHUB_TOKEN is not
+  # allowed to push changes to .github/workflows/.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+    allow:
+      - dependency-name: hashgraph-online/ai-plugin-scanner-action
+    commit-message:
+      prefix: chore
