@@ -133,7 +133,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
-      - uses: hashgraph-online/ai-plugin-scanner-action@9a6d9e4f69118302d3d0b3013ec7a78c1ed52ea9 # v1.2.820
+      - uses: hashgraph-online/ai-plugin-scanner-action@6ed3f34b07bbd674da934c532cc7473ab6365d29 # v1.2.821
         with:
           plugin_dir: "."
           min_score: 75
